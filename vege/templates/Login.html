@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Login{% endblock title %}
+{% block link %}<link rel="stylesheet" href="{% static 'vege/css/Login.css' %}">{% endblock link %}
+
+{% block body %}
+
+<form method="POST" >
+    {% csrf_token %}
+    <div class="login-page">
+      <div class="form">
+
+        <form class="login-form">
+            <input type="text" placeholder="username" name="username" required>
+            <input type="password" placeholder="password" name="password" required/>
+            <button>login</button>
+            <p class="message">Not registered? <a href="/Register/">Create an account</a></p>
+          </form>
+      </div>
+    </div>
+    
+  
+</form>
+
+{% endblock body %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}{{title}}{% endblock title %}{{title}}
+{% block body %}
+
+
+{% comment %} <h1>This template is returned by the Django server</h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure illo ad tempore! Dolorum vel nam eius, enim expedita, consequuntur rem ab ipsam vero veniam est iste. Iure consequuntur adipisci eum!</p>
+
+<style>
+    table, th, td {
+        border: 1px solid;
+        text-align: center;
+    }
+</style>
+<table class="container">
+    <tr>
+      <th>Sr.No.</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Vote</th>
+    </tr>
+    {% for person in peoples %}
+    <tr >
+      <td>{{ forloop.counter }}</td>
+      <td>{{ person.name }}</td>
+      <td>{{ person.age }}</td>
+      <td {% if person.age <= 18 %} style="background-color:red;" {% endif %}>
+        {% if person.age >= 18 %}
+        Yes
+        {% else %}
+        No
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+</table> {% endcomment %}
+
+
+<div class="mx-auto" style="width: 200px;">
+  <a href="recipes/"><button type="button" class="btn btn-info my-5" >Add Your Recipes</button></a>
+</div>
+    {% endblock body %}
